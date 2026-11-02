@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krupis</title>
+<style>
+/* Pamata izkārtojums — šīs rindas nemaini */
+body { font-family: Arial, sans-serif; max-width: 680px; margin: 24px auto; padding: 16px; line-height: 1.6; }
+button, input { font: inherit; padding: 10px 16px; margin: 6px 0; cursor: pointer; }
+img, audio { max-width: 100%; }
+[hidden] { display: none !important; }
+
+/* NOFORMĒ ŠEIT: pielieto 2.1. un 2.2. nodarbībā apgūto CSS */
+body {
+  background-color: #80bd78;
+  color: #096931;
+}
+
+h1 {
+  color: #6c5eaa; font-size: 36px; text-align: center; 
+}
+
+.noteikumi {
+  background-color: #12a16a;
+  color: #333480;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.laukums {
+  width: 360px;
+  padding: 20px;
+  border: 2px solid #94a3b8;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+button {
+  background-color: #63686d;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+<h1>Krupji</h1>
+<p>Spēles mērķis ir savākt desmit zvaigznes.</p>
+<section class="noteikumi">
+  <h2>Noteikumi</h2>
+  <p>Punktus var iegūt, savācot zvaigzni spēlē.</p>
+  <p>Skaņa tiek atskaņota, kad spēlētājs savāc zvaigzni.</p>
+</section>
+<div class="laukums">
+  <h2>Spēles laukums</h2>
+  <img src="attēli/varonis.png" alt="Krupis" width="128">
+  <p>Skaņas efekta nozīme, kad savāc punktus.</p>
+  <audio controls src="skaņa/klikskis.wav"></audio>
+  <p id="punkti">Punkti: 0</p>
+  <button onclick="savakt()">Savākt punktu</button>
+</div>
+<script>
+// Gatava punktu poga — šo skriptu nemaini.
+let punkti = 0;
+function savakt() {
+  punkti = punkti + 1;
+  document.getElementById("punkti").textContent = "Punkti: " + punkti;
+}
+</script>
+</body>
+</html>
